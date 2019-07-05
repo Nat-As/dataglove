@@ -238,7 +238,7 @@ class HTTPClient(object):
             phase = self.update_pilot_status().get('flightPhase')
             if not phase:
                 continue
-            fmt_out('flight phase = {}\n', phase)
+            #fmt_out('flight phase = {}\n', phase)
             if phase == 'READY_FOR_GROUND_TAKEOFF':
                 fmt_out('Publishing ground takeoff\n')
                 self.request_json('async_command', {'command': 'ground_takeoff'})
@@ -469,7 +469,7 @@ def main():
                 pinky = (data[10] + data[11])
                 fingers = [thumb,index,middle,ring,pinky]
                 hand = sum([data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11]])
-                print(fingers,hand)
+                #print(fingers,hand)
                 
                 #Define poses here
                 pose = "ofnen"
@@ -493,8 +493,13 @@ def main():
                 if (pose == "thumbsup"):
                     client.takeoff()
 
-
-
+        #Add exceptions here
+        except(KeyboardInterrupt):
+            exit()
+        except(AttributeError):
+            print("The drone has been commandeered!")
+            print("Exiting...")
+            exit()
         except(IndexError):
             print("Connecting to glove...")
             time.sleep(5)
