@@ -1,3 +1,4 @@
+# Dataglove Adaptor 2.0
 ## Glove Documentation
 The dataglove.py script is a demonstration of parsing the serial port data from the right-handed dataglove.<br>
 1. First, the glove must be connected to the device via serial port.
