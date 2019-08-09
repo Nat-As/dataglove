@@ -1,0 +1,14 @@
+{  
+   "type":"lsdefinition",
+   "version":"1.0",
+   "name":"datagloveadaptor",
+   "namespace":"ls.SOFWERX.exp.dataglove",
+   "lsservicetype":"EVENT",
+   "parameters":[
+         {
+            "pose":"string"
+         }
+      ],
+   "response":"null",
+   "error":"null"
+}
